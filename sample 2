@@ -1,0 +1,11 @@
+Card Transaction Data, Customer Card Map, Customer Spend Data, Live Activity Feed for L0
+L1_Relationship_Manager, L1_Acquirer for L1
+
+L1 tables location
+WITH
+(
+    LOCATION = N'merchant-intelligence/L1_data_merchant/Merchant_Location_Data.csv',
+    DATA_SOURCE = banking_usecasesDS_v3,
+    FILE_FORMAT = CsvFormat
+);
+GO
