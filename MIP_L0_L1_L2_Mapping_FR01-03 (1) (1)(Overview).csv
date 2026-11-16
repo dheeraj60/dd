@@ -1,0 +1,30 @@
+"Table-to-FR matrix  (O = own table, R = reused from an earlier FR)",,,,,
+Table,Layer,FR-01,FR-02,FR-03,Type
+L1_Merchant_Master,L1,O,R,R,Cleansed entity
+L1_Merchant_Location,L1,O,R,,Cleansed entity
+L1_MCC_Reference,L1,O,,,Cleansed reference
+L1_Relationship_Manager,L1,O,,,Derived entity
+L1_Acquirer,L1,O,R,,Derived entity
+L1_Acquiring_Monthly,L1,,O,,Cleansed time series
+L1_Merchant_Credit,L1,,O,,Cleansed snapshot
+L1_Merchant_Digital,L1,,O,,Cleansed entity
+L1_Merchant_Revenue_Monthly,L1,,,O,Cleansed time series
+L1_Merchant_Growth_Monthly,L1,,,O,Derived time series
+L1_Card_Transaction,L1,,,O,Cleansed transaction
+L1_DQ_Exception_Log,L1,O,R,R,Control table
+Dim_Merchant,L2,O,R,R,Dimension (SCD Type 2)
+Dim_Location,L2,O,R,,Dimension
+Dim_Merchant_Category,L2,O,R,,Dimension
+Dim_Relationship_Manager,L2,O,R,,Dimension
+Dim_Acquirer,L2,O,R,,Dimension
+Dim_Time,L2,,O,R,Dimension
+Fact_Acquiring_Revenue,L2,,O,,Periodic fact
+Fact_Merchant_Credit_Snapshot,L2,,O,,Snapshot fact
+Fact_Merchant_Digital_Snapshot,L2,,O,,Snapshot fact
+Fact_Merchant_Revenue,L2,,,O,Periodic fact
+Fact_Merchant_Growth,L2,,,O,Derived periodic fact
+Fact_Transactions,L2,,,O,Transaction fact
+Dim_Channel,L2,,,O,Dimension
+Dim_Transaction_Profile,L2,,,O,Junk dimension
+,,,,,
+Totals: 12 L1 tables (11 mapped from L0 plus the DQ log) and 14 L2 tables (8 dimensions and 6 facts).,,,,,
