@@ -1,0 +1,32 @@
+/****** Object:  Table [L0_Raw].[L0_MERCHANT_LOCATION]    Script Date: 09-11-2026 17:16:55 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[L0_Raw].[L0_MERCHANT_LOCATION]') AND type in (N'U'))
+DROP EXTERNAL TABLE [L0_Raw].[L0_MERCHANT_LOCATION]
+GO
+ 
+/****** Object:  Table [L0_Raw].[L0_MERCHANT_LOCATION]    Script Date: 09-11-2026 17:16:55 ******/
+SET ANSI_NULLS ON
+GO
+ 
+SET QUOTED_IDENTIFIER ON
+GO
+ 
+CREATE EXTERNAL TABLE [L0_Raw].[L0_MERCHANT_LOCATION]
+(
+	[MerchantID] [varchar](10),
+	[Latitude] [decimal](10, 6),
+	[Longitude] [decimal](10, 6),
+	[City] [varchar](100),
+	[State] [varchar](100),
+	[PINCode] [varchar](10),
+	[MallOrBusinessZone] [varchar](200),
+	[CatchmentArea] [varchar](50)
+)
+WITH
+(
+    LOCATION = N'merchant-intelligence/L0_data_merchant/Merchant_Location_Data.csv',
+    DATA_SOURCE = banking_usecasesDS_v3,
+    FILE_FORMAT = CsvFormat
+);
+GO
+ 
+ 
